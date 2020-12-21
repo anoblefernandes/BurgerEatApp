@@ -3,9 +3,9 @@
 <h2>burger that are not devour!</h2>
 
 <ul>
-  {{#each burger}}
-    {{#unless devour}}
-      {{> burger/burger-block sleep=true}}
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      {{> Burger/burger-block sleep=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -13,9 +13,9 @@
 <h2>burger that are devour!</h2>
 
 <ul>
-  {{#each burger}}
-    {{#if devour}}
-      {{> burger/burger-block sleep=false}}
+  {{#each burgers}}
+    {{#if this.devoured}}
+      {{> Burger/burger-block sleep=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -31,7 +31,7 @@
   <div class="form-group">
     <label for="devour">devour?</label><br>
     <input type="radio" name="devour" value="1" checked> devour!<br>
-    <input type="radio" name="devour" value="0"> Awake
+   
   </div>
 
   <button type="submit">Add burger</button>
